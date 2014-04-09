@@ -16,7 +16,7 @@ Public Class Friendships
     End Function
 
     ''' <summary>
-    ''' Delete user to follow list
+    ''' Delete user from follow list
     ''' </summary>
     ''' <param name="parameter">Parameters</param>
     Public Function Destroy(ByVal parameter As RequestParam) As ResponseObject(Of UserObject)
