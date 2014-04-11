@@ -48,9 +48,6 @@ Public Class OauthTokens
     End Sub
 
     Friend Function PrepareAccess(ByVal Method As HttpMethod, ByVal EndPoint As String, Optional ByVal parameter As RequestParam = Nothing) As WebResponse
-        If Now >= LastUpdate.AddSeconds(ExpiresIn) Then
-            TokenRefresh()
-        End If
         If Method = HttpMethod.HttpGET Then
             Return GETAccess(EndPoint, Me, parameter)
         ElseIf Method = HttpMethod.HttpPOST Then
