@@ -21,6 +21,7 @@
     Friend ReadOnly SecretMails As String = Croudia_API & "secret_mails.json"
     Friend ReadOnly SecretMails_Sent As String = Croudia_API & "secret_mails/sent.json"
     Friend ReadOnly SecretMails_New As String = Croudia_API & "secret_mails/new.json"
+    Friend ReadOnly SecretMails_New_With_Media As String = Croudia_API & "secret_mails/new_with_media.json"
     Friend ReadOnly SecretMails_Destroy_Id As String = Croudia_API & "secret_mails/destroy/{0}.json"
     Friend ReadOnly SecretMails_Show_Id As String = Croudia_API & "secret_mails/show/{0}.json"
     'Users

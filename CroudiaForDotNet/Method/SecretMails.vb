@@ -44,4 +44,12 @@
     Public Function Show(ByVal Id As Decimal) As ResponseObject(Of SecretMailObject)
         Return New ResponseObject(Of SecretMailObject)(token.PrepareAccess(HttpMethod.HttpGET, String.Format(EndPoints.SecretMails_Show_Id, Id.ToString)))
     End Function
+
+    ''' <summary>
+    ''' Create new secretmail with media
+    ''' </summary>
+    ''' <param name="parameter">Parameters</param>
+    Public Function CreateWithMedia(ByVal parameter As RequestParam) As ResponseObject(Of SecretMailObject)
+        Return New ResponseObject(Of SecretMailObject)(token.PrepareAccess(HttpMethod.HttpPOSTMultipart, EndPoints.SecretMails_New, parameter))
+    End Function
 End Class

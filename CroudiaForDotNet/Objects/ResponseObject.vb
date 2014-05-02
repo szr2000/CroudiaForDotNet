@@ -9,7 +9,7 @@ Public Class ResponseObject(Of T)
     Public Sub New(ByVal s As WebResponse)
         ResponsedText = New StreamReader(s.GetResponseStream, Text.Encoding.UTF8).ReadToEnd
         ResponseCode = CType(s, HttpWebResponse).StatusCode
-        If Not String.IsNullOrEmpty(ResponsedText) Then
+        If Not String.IsNullOrWhiteSpace(ResponsedText) Then
             'Parse
             Objects = CType(parser.ReadObject(New MemoryStream(Encoding.UTF8.GetBytes(ResponsedText))), T)
         End If

@@ -44,4 +44,9 @@
     Public Async Function Show(ByVal Id As Decimal) As Task(Of ResponseObject(Of SecretMailObject))
         Return Await Task.Run(Function() token.SecretMails.Show(Id))
     End Function
+
+
+    Public Async Function CreateWithMedia(ByVal parameter As RequestParam) As Task(Of ResponseObject(Of SecretMailObject))
+        Return Await Task.Run(Function() token.SecretMails.CreateWithMedia(parameter))
+    End Function
 End Class
