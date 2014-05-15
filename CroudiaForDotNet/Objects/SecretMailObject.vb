@@ -6,9 +6,11 @@ Public Class SecretMailObject
     ''' シークレットメールの作成日
     ''' </summary>
     ''' <remarks></remarks>
-    Public Function CreatedAt() As DateTime
-        Return DatetimeParser.Parse(cat)
-    End Function
+    Public ReadOnly Property CreatedAt As DateTime
+        Get
+            Return DatetimeParser.Parse(cat)
+        End Get
+    End Property
 
     <DataMember(Name:="created_at")>
     Private Property cat As String

@@ -22,9 +22,11 @@ Public Class TrendsObjectList
     ''' <summary>
     ''' asof
     ''' </summary>
-    Public Function AsOf() As DateTime
-        Return DatetimeParser.Parse(as_of)
-    End Function
+    Public ReadOnly Property AsOf As DateTime
+        Get
+            Return DatetimeParser.Parse(as_of)
+        End Get
+    End Property
 
     <DataMember(Name:="as_of")>
     Private Property as_of As String
@@ -33,9 +35,11 @@ Public Class TrendsObjectList
     ''' ささやいた日時を取得します
     ''' </summary>
     ''' <remarks></remarks>
-    Public Function CreatedAt() As DateTime
-        Return DatetimeParser.Parse(cat)
-    End Function
+    Public ReadOnly Property CreatedAt As DateTime
+        Get
+            Return DatetimeParser.Parse(cat)
+        End Get
+    End Property
 
     <DataMember(Name:="created_at")>
     Private Property cat As String
